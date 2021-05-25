@@ -1,0 +1,63 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Query",
+        "description": "This is a documentation api.",
+        "termsOfService": "https://metroindonesia.com/app/dev/terms/",
+        "contact": {
+            "email": "achmadhafizhh@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1"
+    },
+    "servers": [
+        {
+            "url": "http://192.168.0.25/v2",
+            "description": "Development Host"
+        }
+    ],
+    "paths": {
+        "/Query/execute": {
+            "post": {
+                "tags": [
+                    "Query"
+                ],
+                "summary": "execute data and generate document Query",
+                "description": "",
+                "operationId": "execute",
+                "requestBody": {
+                    "description": "List of data object",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "execute": {
+                                            "description": "",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about documentation",
+        "url": "https://metroindonesia.com/app/dev/docs"
+    }
+}
